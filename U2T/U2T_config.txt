@@ -1,0 +1,38 @@
+{
+	"configurations":
+	{
+		"d_create_date": "2025-06-21 20:43:00",
+		"d_modify_date": "2025-06-21 20:43:00",
+		"d_config_name": "001",
+		"d_config_tags": "",
+		"d_description": "001",
+		"__": "##########", 
+		"d_log_level": "error",
+		"d_log_file": "",
+		"d_enable": 1,
+		"d_shutdown": 0,
+		"d_watchdog_enabled": 0,
+		"d_load_prev_config": 0,
+		"d_dump_current_config": 0,
+		"d_dump_prev_config": 0,
+		"d_time_out_sec": 1
+	},
+	"tunnel1":
+	{
+	  "UDP_origin_ip": "INADDR_ANY",
+	  "UDP_origin_port": 1234,
+	  "TCP_termination_ip": "192.168.1.60",
+	  "TCP_termination_port": 4321,
+	  "enable": 1,
+	  "reset_connections": 0
+	},
+	"tunnel2":
+	{
+	  "UDP_origin_ip": "INADDR_ANY",
+	  "UDP_origin_port": 1235,
+	  "TCP_termination_ip": "192.168.1.60",
+	  "TCP_termination_port": 4322,
+	  "enable": 1,
+	  "reset_connections": 0
+	}
+}
