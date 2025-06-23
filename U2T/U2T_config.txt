@@ -1,21 +1,21 @@
 {
 	"configurations":
 	{
-		"d_create_date": "2025-06-21 20:43:00",
-		"d_modify_date": "2025-06-21 20:43:00",
-		"d_config_name": "001",
-		"d_config_tags": "",
-		"d_description": "001",
+		"create_date": "2025-06-21 20:43:00",
+		"modify_date": "2025-06-21 20:43:00",
+		"config_name": "001",
+		"config_tags": "",
+		"description": "001",
 		"__": "##########", 
-		"d_log_level": "error",
-		"d_log_file": "",
-		"d_enable": 1,
-		"d_shutdown": 0,
-		"d_watchdog_enabled": 0,
-		"d_dump_prev_config": 0,
-		"d_dump_current_config": 0,
-		"d_load_prev_config": 0,
-		"d_time_out_sec": 1
+		"log_level": "error",
+		"log_file": "",
+		"enable": 1,
+		"shutdown": 0,
+		"watchdog_enabled": 0,
+		"dump_prev_config": 0,
+		"dump_current_config": 0,
+		"load_prev_config": 0,
+		"time_out_sec": 1
 	},
 	"tunnels":
 	{
