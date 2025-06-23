@@ -12,27 +12,30 @@
 		"d_enable": 1,
 		"d_shutdown": 0,
 		"d_watchdog_enabled": 0,
-		"d_load_prev_config": 0,
-		"d_dump_current_config": 0,
 		"d_dump_prev_config": 0,
+		"d_dump_current_config": 0,
+		"d_load_prev_config": 0,
 		"d_time_out_sec": 1
 	},
-	"tunnel1":
+	"tunnels":
 	{
-	  "UDP_origin_ip": "INADDR_ANY",
-	  "UDP_origin_port": 1234,
-	  "TCP_termination_ip": "192.168.1.60",
-	  "TCP_termination_port": 4321,
-	  "enable": 1,
-	  "reset_connections": 0
-	},
-	"tunnel2":
-	{
-	  "UDP_origin_ip": "INADDR_ANY",
-	  "UDP_origin_port": 1235,
-	  "TCP_termination_ip": "192.168.1.60",
-	  "TCP_termination_port": 4322,
-	  "enable": 1,
-	  "reset_connections": 0
+		"tunnel1":
+		{
+		  "UDP_origin_ip": "INADDR_ANY",
+		  "UDP_origin_port": 1234,
+		  "TCP_termination_ip": "192.168.1.60",
+		  "TCP_termination_port": 4321,
+		  "enable": 1,
+		  "reset_connections": 0
+		},
+		"tunnel2":
+		{
+		  "UDP_origin_ip": "INADDR_ANY",
+		  "UDP_origin_port": 1235,
+		  "TCP_termination_ip": "192.168.1.60",
+		  "TCP_termination_port": 4322,
+		  "enable": 1,
+		  "reset_connections": 0
+		}
 	}
 }
