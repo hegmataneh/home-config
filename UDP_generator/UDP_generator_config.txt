@@ -17,16 +17,16 @@
 		"load_prev_config": 0,
 		"time_out_sec": 1
 	},
-	"output_udps":
+	"waves":
 	{
-		"UDP1":
+		"wave1":
 		{
 		  "UDP_destination_ip": "192.168.100.60",
 		  "UDP_destination_port": 1234,
 		  "UDP_destination_interface": "-",
-		  "limit_packets": "0",
+		  "limited_packets": "0",
 		  "packet_count": 10000000,
-		  "parallelism_count": 100,
+		  "parallelism_count": 2,
 		  "enable": 1,
 		  "reset_connections": 0
 		}
