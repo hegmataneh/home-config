@@ -15,7 +15,20 @@
 		"dump_prev_config": 0,
 		"dump_current_config": 0,
 		"load_prev_config": 0,
-		"time_out_sec": 1
+		"time_out_sec": 1,
+		"verbose_mode": 0,
+		"hi_frequent_log_interval_sec": 10,
+		"refresh_variable_from_scratch": 0,
+		"stat_referesh_interval_sec": 1
+	},
+	"valid_key_values":
+	{
+		"verbose_mode": "-",
+		"hi_frequent_log_interval_sec": "-",
+		"stat_referesh_interval_sec": "-",
+		"parallelism_count": "-",
+		"iteration_delay_milisec": "-",
+		"packet_payload_size": "-"
 	},
 	"Protocol_Bridges":
 	{
@@ -24,31 +37,9 @@
 		  "UDP_origin_ip": "INADDR_ANY",
 		  "UDP_origin_port": 1234,
 		  "UDP_origin_interface": "-",
-		  "TCP_destination_ip": "192.168.1.60",
-		  "TCP_destination_port": 4321,
-		  "TCP_origin_interface": "-",
-		  "enable": 0,
-		  "reset_connections": 0
-		},
-		"bridge2":
-		{
-		  "UDP_origin_ip": "INADDR_ANY",
-		  "UDP_origin_port": 1235,
-		  "UDP_origin_interface": "-",
-		  "TCP_destination_ip": "192.168.1.60",
-		  "TCP_destination_port": 4322,
-		  "TCP_origin_interface": "-",
-		  "enable": 0,
-		  "reset_connections": 0
-		},
-		"bridge3":
-		{
-		  "UDP_origin_ip": "INADDR_ANY",
-		  "UDP_origin_port": 1234,
-		  "UDP_origin_interface": "-",
 		  "TCP_destination_ip": "192.168.100.60",
 		  "TCP_destination_port": 4321,
-		  "TCP_origin_interface": "-",
+		  "TCP_destination_interface": "-",
 		  "enable": 1,
 		  "reset_connections": 0
 		}
