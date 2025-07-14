@@ -28,16 +28,17 @@
 		"stat_referesh_interval_sec": "-",
 		"parallelism_count": "-",
 		"iteration_delay_milisec": "-",
-		"packet_payload_size": "-"
+		"packet_payload_size": "-",
+		"UDP_origin_ip": "INADDR_ANY"
 	},
 	"Protocol_Bridges":
 	{
 		"bridge1":
 		{
-		  "UDP_origin_ip": "INADDR_ANY",
+		  "UDP_origin_ip": "192.168.100.60",
 		  "UDP_origin_port": 1234,
 		  "UDP_origin_interface": "-",
-		  "TCP_destination_ip": "192.168.100.60",
+		  "TCP_destination_ip": "192.168.100.61",
 		  "TCP_destination_port": 4321,
 		  "TCP_destination_interface": "-",
 		  "enable": 1,

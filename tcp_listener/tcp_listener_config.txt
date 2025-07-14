@@ -28,22 +28,18 @@
 		"stat_referesh_interval_sec": "-",
 		"parallelism_count": "-",
 		"iteration_delay_milisec": "-",
-		"packet_payload_size": "-"
+		"packet_payload_size": "-",
+		"TCP_listen_ip": "INADDR_ANY"
 	},
-	"waves":
+	"TCP_listeners":
 	{
-		"wave1":
+		"listener1":
 		{
-		  "UDP_destination_ip": "192.168.100.60",
-		  "UDP_destination_port": 1234,
-		  "UDP_destination_interface": "-",
-		  "limited_packets": "0",
-		  "packet_count": 10000000,
-		  "parallelism_count": 1,
+		  "TCP_listen_ip": "INADDR_ANY",
+		  "TCP_listen_port": 4321,
+		  "TCP_listen_interface": "-",
 		  "enable": 1,
-		  "reset_connections": 0,
-		  "iteration_delay_milisec": 0,
-		  "packet_payload_size": 1000
+		  "reset_connections": 0
 		}
 	}
 }
