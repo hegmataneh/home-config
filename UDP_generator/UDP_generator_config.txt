@@ -19,7 +19,9 @@
 		"verbose_mode": 0,
 		"hi_frequent_log_interval_sec": 10,
 		"refresh_variable_from_scratch": 0,
-		"stat_referesh_interval_sec": 1
+		"stat_referesh_interval_sec": 1,
+		"synchronization_min_wait": 20,
+		"synchronization_max_roundup": 10
 	},
 	"valid_key_values":
 	{
@@ -43,7 +45,7 @@
 		  "enable": 1,
 		  "reset_connections": 0,
 		  "iteration_delay_milisec": 0,
-		  "packet_payload_size": 1000
+		  "packet_payload_size": 1
 		}
 	}
 }
