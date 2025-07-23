@@ -20,8 +20,10 @@
 		"hi_frequent_log_interval_sec": 10,
 		"refresh_variable_from_scratch": 0,
 		"stat_referesh_interval_sec": 1,
-		"synchronization_min_wait": 20,
-		"synchronization_max_roundup": 10
+		"synchronization_min_wait": 15,
+		"synchronization_max_roundup": 60,
+		"show_line_hit": 0,
+		"retry_unexpected_wait_for_sock": 5
 	},
 	"valid_key_values":
 	{
