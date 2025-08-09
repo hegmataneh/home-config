@@ -9,6 +9,7 @@
 		"__": "##########", 
 		"log_level": "error",
 		"log_file": "/",
+		"log_folder": "/",
 		"enable": 1,
 		"shutdown": 0,
 		"watchdog_enabled": 0,
@@ -20,10 +21,11 @@
 		"hi_frequent_log_interval_sec": 10,
 		"refresh_variable_from_scratch": 0,
 		"stat_referesh_interval_sec": 1,
+		
 		"synchronization_min_wait": 15,
 		"synchronization_max_roundup": 60,
-		"show_line_hit": 0,
-		"retry_unexpected_wait_for_sock": 5
+		"dump_result_to_file_after_each_iteration": 0,
+		"number_in_short_form": 0
 	},
 	"valid_key_values":
 	{
@@ -41,12 +43,12 @@
 		  "UDP_destination_ip": "192.168.100.60",
 		  "UDP_destination_port": 1234,
 		  "UDP_destination_interface": "-",
-		  "limited_packets": "0",
+		  "limited_packets": 1,
 		  "packet_count": 10000000,
 		  "parallelism_count": 1,
 		  "enable": 1,
 		  "reset_connections": 0,
-		  "iteration_delay_milisec": 0,
+		  "iteration_delay_nanosec": 0,
 		  "packet_payload_size": 1
 		}
 	}
