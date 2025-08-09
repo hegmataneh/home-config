@@ -20,11 +20,12 @@
 		"hi_frequent_log_interval_sec": 10,
 		"refresh_variable_from_scratch": 0,
 		"stat_referesh_interval_sec": 1,
-		"thread_handler_type": "bidirection",
+		"thread_handler_type": "justIncoming",
 		"synchronization_min_wait": 15,
 		"synchronization_max_roundup": 60,
 		"show_line_hit": 0,
-		"retry_unexpected_wait_for_sock": 5
+		"retry_unexpected_wait_for_sock": 5,
+		"number_in_short_form": 0
 	},
 	"valid_key_values":
 	{
