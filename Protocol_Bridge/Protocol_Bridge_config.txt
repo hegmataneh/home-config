@@ -20,7 +20,6 @@
 		"hi_frequent_log_interval_sec": 10,
 		"refresh_variable_from_scratch": 0,
 		"stat_referesh_interval_sec": 1,
-		"thread_handler_type": "justIncoming",
 		"synchronization_min_wait": 15,
 		"synchronization_max_roundup": 60,
 		"show_line_hit": 0,
@@ -32,24 +31,329 @@
 		"verbose_mode": "-",
 		"hi_frequent_log_interval_sec": "-",
 		"stat_referesh_interval_sec": "-",
-		"parallelism_count": "-",
-		"iteration_delay_milisec": "-",
-		"packet_payload_size": "-",
-		"UDP_origin_ip": "INADDR_ANY",
-		"thread_handler_type": "buttleneck,bidirection,justIncoming"
+		"UDP_origin_ip": "INADDR_ANY -> all interface",
+		"thread_handler_act": "serially,concurrent,receive",
+		"group_type": "one_out,RR,Replicate,WRR_least_err-serialize,separately",
+		"out_type": "one2one,one2many,many2one,many2many",
+		"caution": "all name be string"
 	},
 	"Protocol_Bridges":
 	{
-		"bridge1":
+		"bridge_one2one_serially":
 		{
-		  "UDP_origin_ip": "192.168.100.60",
-		  "UDP_origin_port": 1234,
-		  "UDP_origin_interface": "-",
-		  "TCP_destination_ip": "192.168.100.61",
-		  "TCP_destination_port": 4321,
-		  "TCP_destination_interface": "-",
-		  "enable": 1,
-		  "reset_connections": 0
+			"out_type": "one2one",
+			"thread_handler_act": "serially",
+			"inputs":
+			{
+				"in1":
+				{
+					"group": "1",
+					"group_type": "separately",
+					"UDP_origin_ip": "192.168.100.60",
+					"UDP_origin_port": "1234",
+					"UDP_origin_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"outputs":
+			{
+				"out1":
+				{
+					"group": "1",
+					"group_type": "one_out",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_port": "4000",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"enable": 1
+		}
+		,"bridge_one2one_concurrent":
+		{
+			"out_type": "one2one",
+			"thread_handler_act": "concurrent",
+			"inputs":
+			{
+				"in1":
+				{
+					"group": "1",
+					"group_type": "separately",
+					"UDP_origin_ip": "192.168.100.60",
+					"UDP_origin_port": "1234",
+					"UDP_origin_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"outputs":
+			{
+				"out1":
+				{
+					"group": "1",
+					"group_type": "one_out",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_port": "4000",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"enable": 0
+		}
+		,"bridge_one2many_Replicate_concurrent":
+		{
+			"out_type": "one2many",
+			"thread_handler_act": "concurrent",
+			"inputs":
+			{
+				"in1":
+				{
+					"group": "1",
+					"group_type": "separately",
+					"UDP_origin_ip": "192.168.100.60",
+					"UDP_origin_port": "1234",
+					"UDP_origin_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"outputs":
+			{
+				"out1":
+				{
+					"group": "1",
+					"group_type": "Replicate",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_port": "5000",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				},
+				"out2":
+				{
+					"group": "1",
+					"group_type": "Replicate",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_port": "5001",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"enable": 0
+		}
+		,"bridge_one2many_RR_Replicate_concurrent":
+		{
+			"out_type": "one2many",
+			"thread_handler_act": "concurrent",
+			"inputs":
+			{
+				"in1":
+				{
+					"group": "1",
+					"group_type": "separately",
+					"UDP_origin_ip": "192.168.100.60",
+					"UDP_origin_port": "1234",
+					"UDP_origin_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"outputs":
+			{
+				"out1":
+				{
+					"group": "1",
+					"group_type": "RR",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_port": "5000",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				},
+				"out2":
+				{
+					"group": "1",
+					"group_type": "RR",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_port": "5001",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				},
+				"out3":
+				{
+					"group": "2",
+					"group_type": "Replicate",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_port": "5002",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"enable": 0
+		}
+		,"bridge_one2many_WRR_least_err_concurrent":
+		{
+			"out_type": "one2many",
+			"thread_handler_act": "concurrent",
+			"inputs":
+			{
+				"in1":
+				{
+					"group": "1",
+					"group_type": "separately",
+					"UDP_origin_ip": "192.168.100.60",
+					"UDP_origin_port": "1234",
+					"UDP_origin_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"outputs":
+			{
+				"out1":
+				{
+					"group": "1",
+					"group_type": "WRR_least_err",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_port": "5000",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				},
+				"out2":
+				{
+					"group": "1",
+					"group_type": "WRR_least_err",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_port": "5001",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"enable": 0
+		}
+		,"bridge_many2one_serialize_serially":
+		{
+			"out_type": "many2one",
+			"thread_handler_act": "serially",
+			"inputs":
+			{
+				"in1":
+				{
+					"group": "1",
+					"group_type": "serialize",
+					"UDP_origin_ip": "192.168.100.60",
+					"UDP_origin_port": "1234",
+					"UDP_origin_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				},
+				"in2":
+				{
+					"group": "1",
+					"group_type": "serialize",
+					"UDP_origin_ip": "192.168.100.60",
+					"UDP_origin_port": "1235",
+					"UDP_origin_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"outputs":
+			{
+				"out1":
+				{
+					"group": "1",
+					"group_type": "one_out",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_port": "4000",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"enable": 0
+		}
+		,"bridge_many2one_separately_serially":
+		{
+			"out_type": "many2one",
+			"thread_handler_act": "serially",
+			"inputs":
+			{
+				"in1":
+				{
+					"group": "1",
+					"group_type": "separately",
+					"UDP_origin_ip": "192.168.100.60",
+					"UDP_origin_port": "1234",
+					"UDP_origin_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				},
+				"in2":
+				{
+					"group": "1",
+					"group_type": "separately",
+					"UDP_origin_ip": "192.168.100.60",
+					"UDP_origin_port": "1235",
+					"UDP_origin_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"outputs":
+			{
+				"out1":
+				{
+					"group": "1",
+					"group_type": "one_out",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_port": "4000",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"enable": 0
+		}
+		,"bridge_many2one_separately_serially":
+		{
+			"out_type": "many2one",
+			"thread_handler_act": "serially",
+			"inputs":
+			{
+				"in1":
+				{
+					"group": "1",
+					"group_type": "separately",
+					"UDP_origin_ip": "192.168.100.60-192.168.100.60",
+					"UDP_origin_port": "1234-1237",
+					"UDP_origin_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"outputs":
+			{
+				"out1":
+				{
+					"group": "1",
+					"group_type": "one_out",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_port": "4000",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"enable": 0
 		}
 	}
 }
