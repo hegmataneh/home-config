@@ -23,7 +23,8 @@
 		"synchronization_min_wait": 15,
 		"synchronization_max_roundup": 60,
 		"show_line_hit": 0,
-		"retry_unexpected_wait_for_sock": 5
+		"retry_unexpected_wait_for_sock": 5,
+		"number_in_short_form": 0
 	},
 	"valid_key_values":
 	{
