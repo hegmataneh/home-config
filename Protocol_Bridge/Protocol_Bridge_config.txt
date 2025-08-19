@@ -56,8 +56,8 @@
 					"group": "1",
 					"group_type": "separately",
 					"UDP_origin_ip": "-",
-					"UDP_origin_ports": "udp and port 1234",
-					"UDP_origin_interface": "any",
+					"UDP_origin_ports": "udp port 1234",
+					"UDP_origin_interface": "enp0s3",
 					"enable": 1,
 					"reset_connection": 0
 				}
