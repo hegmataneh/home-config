@@ -45,18 +45,18 @@
 	},
 	"Protocol_Bridges":
 	{
-		"one2one_pcap2kernelDefaultStack_S&F":
+		"one2many_pcap2kernelDefaultStack_S&F_Mix_RR_Replicate":
 		{
-			"out_type": "one2one",
-			"thread_handler_act": "one2one_pcap2kernelDefaultStack_S&F",
+			"out_type": "one2many",
+			"thread_handler_act": "one2many_pcap2NetStack_SF",
 			"inputs":
 			{
 				"in1":
 				{
 					"group": "1",
-					"group_type": "separately",
-					"UDP_origin_ip": "-",
-					"UDP_origin_ports": "udp port 1234",
+					"group_type": "one2many",
+					"UDP_origin_ip": "192.168.100.60",
+					"UDP_origin_ports": "1234",
 					"UDP_origin_interface": "enp0s3",
 					"enable": 1,
 					"reset_connection": 0
@@ -67,12 +67,32 @@
 				"out1":
 				{
 					"group": "1",
-					"group_type": "one_out",
+					"group_type": "RR",
 					"TCP_destination_ip": "192.168.100.61",
-					"TCP_destination_ports": "4321",
+					"TCP_destination_ports": "5000",
 					"TCP_destination_interface": "-",
 					"enable": 1,
-					"reset_connection": 0
+					"reset_connection": 1
+				},
+				"out2":
+				{
+					"group": "1",
+					"group_type": "RR",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_ports": "5001",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 1
+				},
+				"out3":
+				{
+					"group": "2",
+					"group_type": "Replicate",
+					"TCP_destination_ip": "192.168.100.61",
+					"TCP_destination_ports": "5002",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 1
 				}
 			},
 			"enable": 1
