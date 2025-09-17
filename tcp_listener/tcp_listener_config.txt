@@ -46,21 +46,5 @@
 		  "enable": 1,
 		  "reset_connections": 0
 		}
-		,"listener2":
-		{
-		  "TCP_listen_ip": "INADDR_ANY",
-		  "TCP_listen_port": 5001,
-		  "TCP_listen_interface": "-",
-		  "enable": 1,
-		  "reset_connections": 0
-		}
-		,"listener3":
-		{
-		  "TCP_listen_ip": "INADDR_ANY",
-		  "TCP_listen_port": 5002,
-		  "TCP_listen_interface": "-",
-		  "enable": 1,
-		  "reset_connections": 0
-		}
 	}
 }
