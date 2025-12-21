@@ -1,3 +1,83 @@
+// 14040916 config for read from ens160 by pcap then send to 192.168.4.2:6000
+"uptest_pcap1_tcpReder":
+{
+	"short_name": "10200",
+	"out_type": "one2many",
+	"thread_handler_act": "one2one_pcap2krnl_SF",
+	"INPUTS":
+	{
+		"in11":
+		{
+			"group": "-",
+			"group_type": "-",
+			"UDP_origin_ip": "192.168.1.2",
+			"UDP_destination_ip": "192.168.1.1",
+			"UDP_origin_ports": "-",
+			"UDP_origin_interface": "ens160",
+			"enable": 1,
+			"reset_connection": 0
+		}
+	},
+	"OUTPUTS":
+	{
+		"out11":
+		{
+			"group": "1",
+			"group_type": "one_out",
+			"TCP_destination_ip": "192.168.4.2",
+			"TCP_destination_ports": "10100",
+			"TCP_destination_interface": "-",
+			"enable": 1,
+			"reset_connection": 0
+		}
+	},
+	"enable": 1,
+	"hide": 0
+}
+
+// 14040916 config for read from port 10200 by kernel then send to 192.168.4.2:6000
+"uptest_pcap1_tcpReder":
+{
+	"short_name": "10200",
+	"out_type": "one2many",
+	"thread_handler_act": "one2one_krnl2krnl_SF",
+	"INPUTS":
+	{
+		"in11":
+		{
+			"group": "-",
+			"group_type": "-",
+			"UDP_origin_ip": "192.168.1.1",
+			"UDP_destination_ip": "-",
+			"UDP_origin_ports": "10200",
+			"UDP_origin_interface": "-",
+			"enable": 1,
+			"reset_connection": 0
+		}
+	},
+	"OUTPUTS":
+	{
+		"out11":
+		{
+			"group": "1",
+			"group_type": "one_out",
+			"TCP_destination_ip": "192.168.4.2",
+			"TCP_destination_ports": "6000",
+			"TCP_destination_interface": "-",
+			"enable": 1,
+			"reset_connection": 0
+		}
+	},
+	"enable": 1,
+	"hide": 0
+}
+
+
+
+
+
+192.168.56.61
+
 vmtest
 {
 
@@ -24,13 +104,13 @@ vmtest
 	{
 		"1_56.61:5000":
 		{
-			"group": "1",
-			"group_type": "one_out",
-			"TCP_destination_ip": "192.168.56.61",
-			"TCP_destination_ports": "5000",
-			"TCP_destination_interface": "-",
-			"enable": 1,
-			"reset_connection": 0
+				"group": "1",
+				"group_type": "one_out",
+				"TCP_destination_ip": "192.168.56.61",
+				"TCP_destination_ports": "5000",
+				"TCP_destination_interface": "-",
+				"enable": 1,
+				"reset_connection": 0
 		}
 	},
 	"enable": 1,
@@ -123,7 +203,7 @@ vmtest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "1234",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "enp0s3",
 			"enable": 1,
 			"reset_connection": 0
@@ -163,7 +243,7 @@ vmtest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "1234",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "enp0s3",
 			"enable": 1,
 			"reset_connection": 0
@@ -210,7 +290,7 @@ vmtest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "1234",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "enp0s10",
 			"enable": 1,
 			"reset_connection": 0
@@ -266,7 +346,7 @@ uptest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "10200",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "ens160",
 			"enable": 1,
 			"reset_connection": 0
@@ -324,7 +404,7 @@ uptest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "10201",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "ens257",
 			"enable": 1,
 			"reset_connection": 0
@@ -385,7 +465,7 @@ uptest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "10200",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "ens160",
 			"enable": 1,
 			"reset_connection": 0
@@ -457,7 +537,7 @@ uptest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "1234",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "enp0s3",
 			"enable": 1,
 			"reset_connection": 0
@@ -481,7 +561,7 @@ uptest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "10200-10201",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "ens160",
 			"enable": 1,
 			"reset_connection": 0
@@ -576,7 +656,7 @@ uptest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "10200",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "ens160",
 			"enable": 1,
 			"reset_connection": 0
@@ -636,7 +716,7 @@ uptest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "10200",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "ens160",
 			"enable": 1,
 			"reset_connection": 0
@@ -696,7 +776,7 @@ uptest
 			"group": "1",
 			"group_type": "-",
 			"UDP_origin_ip": "-",
-			"UDP_origin_ports": "1234",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "enp0s3",
 			"enable": 1,
 			"reset_connection": 0
@@ -718,7 +798,7 @@ uptest
 			"group": "1",
 			"group_type": "-",
 			"UDP_origin_ip": "-",
-			"UDP_origin_ports": "10200-10201",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "ens194",
 			"enable": 1,
 			"reset_connection": 0
@@ -762,7 +842,7 @@ uptest
 			"group": "1",
 			"group_type": "-",
 			"UDP_origin_ip": "-",
-			"UDP_origin_ports": "1234",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "enp0s3",
 			"enable": 1,
 			"reset_connection": 0
@@ -834,7 +914,7 @@ uptest
 			"group": "1",
 			"group_type": "one2many",
 			"UDP_origin_ip": "192.168.100.60",
-			"UDP_origin_ports": "udp and port 1234",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "enp0s3",
 			"enable": 1,
 			"reset_connection": 0
@@ -889,7 +969,7 @@ uptest
 			"group": "1",
 			"group_type": "separately",
 			"UDP_origin_ip": "192.168.100.60",
-			"UDP_origin_ports": "1234",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "enp0s3",
 			"enable": 1,
 			"reset_connection": 0
@@ -924,50 +1004,7 @@ uptest
 
 
 	
-		,"many2one_pcap2kernelDefaultStack_S&F_serialize":
-		{
-			"short_name": "fill_this",
-			"out_type": "many2one",
-			"thread_handler_act": "many2one_pcap2kernelDefaultStack_S&F_serialize",
-			"inputs":
-			{
-				"in1":
-				{
-					"group": "1",
-					"group_type": "serialize",
-					"UDP_origin_ip": "192.168.100.60",
-					"UDP_origin_ports": "1234",
-					"UDP_origin_interface": "enp0s3",
-					"enable": 1,
-					"reset_connection": 0
-				},
-				"in2":
-				{
-					"group": "1",
-					"group_type": "serialize",
-					"UDP_origin_ip": "192.168.100.60",
-					"UDP_origin_ports": "1235",
-					"UDP_origin_interface": "enp0s3",
-					"enable": 1,
-					"reset_connection": 0
-				}
-			},
-			"outputs":
-			{
-				"out1":
-				{
-					"group": "1",
-					"group_type": "one_out",
-					"TCP_destination_ip": "192.168.100.61",
-					"TCP_destination_ports": "4000",
-					"TCP_destination_interface": "-",
-					"enable": 1,
-					"reset_connection": 0
-				}
-			},
-			"enable": 1,
-			"hide": 0
-		}
+		
 		
 		
 		
@@ -1069,7 +1106,7 @@ uptest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "1234",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "enp0s3",
 			"enable": 1,
 			"reset_connection": 0
@@ -1127,7 +1164,7 @@ uptest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "1234",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "enp0s10",
 			"enable": 1,
 			"reset_connection": 0
@@ -1187,7 +1224,7 @@ uptest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "10200",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "ens160",
 			"enable": 1,
 			"reset_connection": 0
@@ -1245,7 +1282,7 @@ uptest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "10201",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "ens257",
 			"enable": 1,
 			"reset_connection": 0
@@ -1303,7 +1340,7 @@ uptest
 			"group_type": "-",
 			"UDP_origin_ip": "-",
 			"UDP_destination_ip": "-",
-			"UDP_origin_ports": "10202",
+			"UDP_origin_ports": "-",
 			"UDP_origin_interface": "ens194",
 			"enable": 1,
 			"reset_connection": 0
