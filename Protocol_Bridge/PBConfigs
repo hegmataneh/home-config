@@ -1,3 +1,41 @@
+,
+		"vmtest_pcap2":
+		{
+			"short_name": "172_17_0_59",
+			"out_type": "one2one",
+			"thread_handler_act": "one2one_pcap2krnl_SF",
+			"INPUTS":
+			{
+				"in11":
+				{
+					"group": "1",
+					"group_type": "-",
+					"UDP_origin_ip": "172.17.0.59",
+					"UDP_destination_ip": "172.17.0.60",
+					"UDP_origin_ports": "-",
+					"UDP_origin_interface": "enp0s3",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"OUTPUTS":
+			{
+				"out11":
+				{
+					"group": "1",
+					"group_type": "one_out",
+					"TCP_destination_ip": "192.168.56.61",
+					"TCP_destination_ports": "5000",
+					"TCP_destination_interface": "-",
+					"enable": 1,
+					"reset_connection": 0
+				}
+			},
+			"enable": 1,
+			"hide": 0
+		}
+
+
 // 14040916 config for read from ens160 by pcap then send to 192.168.4.2:6000
 "uptest_pcap1_tcpReder":
 {
@@ -62,7 +100,7 @@
 			"group": "1",
 			"group_type": "one_out",
 			"TCP_destination_ip": "192.168.4.2",
-			"TCP_destination_ports": "6000",
+			"TCP_destination_ports": "7000",
 			"TCP_destination_interface": "-",
 			"enable": 1,
 			"reset_connection": 0
