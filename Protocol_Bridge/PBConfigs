@@ -1,3 +1,53 @@
+"PROTOCOL_BRIDGES":
+{
+	"uptest_pcap1_tcpReder":
+	{
+		"short_name": "10202",
+		"out_type": "one2one",
+		"thread_handler_act": "one2one_pcap2krnl_SF",
+		"INPUTS":
+		{
+			"in11":
+			{
+				"group": "-",
+				"group_type": "-",
+				"connection_type": "udp",
+				"connection_param": "-",
+				"UDP_origin_ip": "10.202.18.130",
+				"UDP_destination_ip": "10.202.18.128",
+				"UDP_origin_ports": "-",
+				"UDP_origin_interface": "ens224",
+				"enable": 1,
+				"reset_connection": 0
+			}
+		},
+		"OUTPUTS":
+		{
+			"out11":
+			{
+				"group": "1",
+				"group_type": "one_out",
+				"connection_type": "ssl_over_tcp",
+				"connection_param": "-",
+				"TCP_destination_ip": "10.202.18.129",
+				"TCP_destination_ports": "5000",
+				"TCP_destination_interface": "-",
+				"enable": 1,
+				"reset_connection": 0,			
+				"post_action": "-",
+				"send_throughput_window_sz": 10,
+				"send_throughput_limit_Bps": 0,
+				"send_gap_nsec": 0,
+				"conn_certificate_path": "client.crt",
+				"conn_key_path": "client.key",
+				"ca_crt_path": "ca.crt"
+			}
+		},
+		"enable": 1,
+		"hide": 0
+	}
+}
+
 ,
 		"vmtest_pcap2":
 		{
@@ -24,6 +74,8 @@
 				{
 					"group": "1",
 					"group_type": "one_out",
+					"connection_type": "tcp",
+					"connection_param": "-",
 					"TCP_destination_ip": "192.168.56.61",
 					"TCP_destination_ports": "5000",
 					"TCP_destination_interface": "-",
@@ -62,6 +114,8 @@
 		{
 			"group": "1",
 			"group_type": "one_out",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.4.2",
 			"TCP_destination_ports": "10100",
 			"TCP_destination_interface": "-",
@@ -99,6 +153,8 @@
 		{
 			"group": "1",
 			"group_type": "one_out",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.4.2",
 			"TCP_destination_ports": "7000",
 			"TCP_destination_interface": "-",
@@ -144,6 +200,8 @@ vmtest
 		{
 				"group": "1",
 				"group_type": "one_out",
+				"connection_type": "tcp",
+				"connection_param": "-",
 				"TCP_destination_ip": "192.168.56.61",
 				"TCP_destination_ports": "5000",
 				"TCP_destination_interface": "-",
@@ -179,6 +237,8 @@ vmtest
 		{
 			"group": "1",
 			"group_type": "one_out",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.56.61",
 			"TCP_destination_ports": "5000",
 			"TCP_destination_interface": "-",
@@ -216,6 +276,8 @@ vmtest
 		{
 			"group": "1",
 			"group_type": "one_out",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.56.61",
 			"TCP_destination_ports": "5000",
 			"TCP_destination_interface": "-",
@@ -253,6 +315,8 @@ vmtest
 		{
 			"group": "1",
 			"group_type": "one_out",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.56.61",
 			"TCP_destination_ports": "5000",
 			"TCP_destination_interface": "-",
@@ -293,6 +357,8 @@ vmtest
 		{
 			"group": "1",
 			"group_type": "Replicate",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.56.61",
 			"TCP_destination_ports": "5000",
 			"TCP_destination_interface": "-",
@@ -304,6 +370,8 @@ vmtest
 		{
 			"group": "1",
 			"group_type": "Replicate",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.56.62",
 			"TCP_destination_ports": "5000",
 			"TCP_destination_interface": "-",
@@ -340,6 +408,8 @@ vmtest
 		{
 			"group": "1",
 			"group_type": "Replicate",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.56.61",
 			"TCP_destination_ports": "5000",
 			"TCP_destination_interface": "-",
@@ -351,6 +421,8 @@ vmtest
 		{
 			"group": "1",
 			"group_type": "Replicate",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.56.62",
 			"TCP_destination_ports": "5000",
 			"TCP_destination_interface": "-",
@@ -396,6 +468,8 @@ uptest
 		{
 			"group": "1",
 			"group_type": "RR",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.4.2",
 			"TCP_destination_ports": "7000",
 			"TCP_destination_interface": "-",
@@ -407,6 +481,8 @@ uptest
 		{
 			"group": "1",
 			"group_type": "RR",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.5.2",
 			"TCP_destination_ports": "8000",
 			"TCP_destination_interface": "-",
@@ -418,6 +494,8 @@ uptest
 		{
 			"group": "2",
 			"group_type": "Replicate",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.6.2",
 			"TCP_destination_ports": "7000",
 			"TCP_destination_interface": "-",
@@ -454,6 +532,8 @@ uptest
 		{
 			"group": "1",
 			"group_type": "RR",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.4.2",
 			"TCP_destination_ports": "7000",
 			"TCP_destination_interface": "-",
@@ -465,6 +545,8 @@ uptest
 		{
 			"group": "1",
 			"group_type": "RR",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.5.2",
 			"TCP_destination_ports": "8000",
 			"TCP_destination_interface": "-",
@@ -476,6 +558,8 @@ uptest
 		{
 			"group": "2",
 			"group_type": "Replicate",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.6.2",
 			"TCP_destination_ports": "7000",
 			"TCP_destination_interface": "-",
@@ -515,6 +599,8 @@ uptest
 		{
 			"group": "1",
 			"group_type": "one_out",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.4.2",
 			"TCP_destination_ports": "10100",
 			"TCP_destination_interface": "-",
@@ -550,6 +636,8 @@ uptest
 		{
 			"group": "1",
 			"group_type": "one_out",
+			"connection_type": "tcp",
+			"connection_param": "-",
 			"TCP_destination_ip": "192.168.4.2",
 			"TCP_destination_ports": "5000",
 			"TCP_destination_interface": "-",
